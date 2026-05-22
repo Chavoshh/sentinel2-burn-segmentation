@@ -28,7 +28,7 @@ This project trains a U-Net model to identify burn scars in multispectral Sentin
 
 ## Author
 
-**Chavosh Almassian** — Remote Sensing & Geoinformatics (M.Sc., KIT)
+**Chavosh Almassian** | Remote Sensing & Geoinformatics (M.Sc., KIT)
 [GitHub](https://github.com/Chavoshh) · [LinkedIn](https://www.linkedin.com/in/chavosh-almassian-81a05216a/)
 
 ---
