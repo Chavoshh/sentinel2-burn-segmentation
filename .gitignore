@@ -42,8 +42,8 @@ datasets/
 *.zip
 *.tar
 *.tar.gz
-models/
-checkpoints/
+/models/
+/checkpoints/
 *.pt
 *.pth
 *.ckpt
