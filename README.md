@@ -29,7 +29,7 @@ This project trains a U-Net model to identify burn scars in multispectral Sentin
 ## Author
 
 **Chavosh Almassian** | Remote Sensing & Geoinformatics (M.Sc., KIT)
-[GitHub](https://github.com/Chavoshh) · [LinkedIn](https://www.linkedin.com/in/chavosh-almassian-81a05216a/)
+[GitHub](https://github.com/Chavoshh) · [LinkedIn](https://www.linkedin.com/in/chavosh-almassian-81a05216a/) . [Weights & Biases](https://wandb.ai/chavosh-personal/sentinel2-burn-segmentation/runs/cvzcohqk?nw=nwuserchavosh)
 
 ---
 
