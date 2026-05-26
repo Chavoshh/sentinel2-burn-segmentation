@@ -12,9 +12,9 @@ This project trains a U-Net model to identify burn scars in multispectral Sentin
 
 - [x] Environment and project setup
 - [x] Dataset acquisition and exploration
-- [ ] Geographic train/val/test split
-- [ ] Baseline U-Net training
-- [ ] Evaluation and visualization
+- [x] Geographic train/val/test split
+- [x] Baseline U-Net training
+- [x] Evaluation and visualization
 - [ ] Model improvements (loss tuning, augmentation, SWIR bands)
 - [ ] Documentation and reproducibility
 
