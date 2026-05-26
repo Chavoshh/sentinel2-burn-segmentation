@@ -1,0 +1,39 @@
+# Baseline training configuration for Sentinel-2 burned area segmentation.
+# Any field omitted here falls back to its default in TrainConfig.
+
+# --- Data ---
+patches_dir: data/processed/patches
+splits_csv: data/processed/splits.csv
+batch_size: 4
+num_workers: 0          # measured fastest on Windows; see Step 7 benchmark
+
+# --- Model ---
+encoder: resnet34
+encoder_weights: imagenet
+in_channels: 6
+
+# --- Optimization ---
+epochs: 30
+lr: 1.0e-4
+weight_decay: 1.0e-4
+bce_weight: 0.5
+dice_weight: 0.5
+
+# --- Scheduler ---
+use_scheduler: true
+min_lr: 1.0e-6
+
+# --- Logging ---
+wandb_entity: chavosh-personal
+wandb_project: sentinel2-burn-segmentation
+run_name: null          # null → W&B auto-generates a name
+log_predictions_every: 5
+n_pred_samples: 4
+checkpoints_dir: models
+
+# --- Reproducibility ---
+seed: 42
+tags:
+  - baseline
+  - resnet34
+  - 6-band
