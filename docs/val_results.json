@@ -1,0 +1,46 @@
+{
+  "checkpoint": "models\\cvzcohqk\\best.pt",
+  "split": "val",
+  "n_samples": 87,
+  "results": {
+    "val/f1": 0.7406660318374634,
+    "val/iou": 0.5881410837173462,
+    "val/precision": 0.8101102709770203,
+    "val/recall": 0.6821876168251038,
+    "confusion_matrix/tp": 1964263,
+    "confusion_matrix/fp": 460423,
+    "confusion_matrix/fn": 915096,
+    "confusion_matrix/tn": 19466746,
+    "total_burn_pixels": 2879359,
+    "total_pixels": 22806528,
+    "burn_fraction": 0.12625152763279004
+  },
+  "train_config": {
+    "patches_dir": "data\\processed\\patches",
+    "splits_csv": "data\\processed\\splits.csv",
+    "batch_size": 4,
+    "num_workers": 0,
+    "encoder": "resnet34",
+    "encoder_weights": "imagenet",
+    "in_channels": 6,
+    "epochs": 30,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "bce_weight": 0.5,
+    "dice_weight": 0.5,
+    "use_scheduler": true,
+    "min_lr": 1e-06,
+    "wandb_entity": "chavosh-personal",
+    "wandb_project": "sentinel2-burn-segmentation",
+    "run_name": "baseline_resnet34_30ep",
+    "log_predictions_every": 5,
+    "n_pred_samples": 4,
+    "checkpoints_dir": "models",
+    "seed": 42,
+    "tags": [
+      "baseline",
+      "resnet34",
+      "6-band"
+    ]
+  }
+}
