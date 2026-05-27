@@ -51,6 +51,7 @@ uv run python scripts/preprocess_data.py
 uv run python scripts/train.py --config configs/baseline.yaml
 
 # Evaluate the trained model on the test set
+# Replace <run-id> with your actual W&B run ID (look in the `models/` folder after training)
 uv run python scripts/evaluate.py --checkpoint models/<run-id>/best.pt
 
 # Generate the results figure
