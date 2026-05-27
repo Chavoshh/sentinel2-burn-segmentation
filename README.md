@@ -92,8 +92,8 @@ sentinel2-burn-segmentation/
 
 ## Author
 
-**Chavosh Almassian** — Remote Sensing & Geoinformatics (M.Sc., KIT)
-[GitHub](https://github.com/Chavoshh) · [Wheights & Biases](https://wandb.ai/chavosh-personal/sentinel2-burn-segmentation/runs/cvzcohqk?nw=nwuserchavosh) . [LinkedIn](https://www.linkedin.com/in/chavoshalmassian)
+**Chavosh Almassian** | Remote Sensing & Geoinformatics (M.Sc., KIT)
+[GitHub](https://github.com/Chavoshh) . [LinkedIn](https://www.linkedin.com/in/chavoshalmassian)
 
 ## License
 
