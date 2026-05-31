@@ -27,7 +27,7 @@ Given a Sentinel-2 post-fire image, the model predicts which pixels show burned 
 
 ## Methodology
 
-- **Dataset:** [CaBuAr (California Burned Areas)](https://huggingface.co/datasets/DarthReca/california_burned_areas) — Sentinel-2 L2A patches paired with CAL FIRE perimeters rasterized as binary masks.
+- **Dataset:** [CaBuAr (California Burned Areas)](https://huggingface.co/datasets/DarthReca/california_burned_areas) - Sentinel-2 L2A patches paired with CAL FIRE perimeters rasterized as binary masks.
 - **Input:** 6 Sentinel-2 bands (B02, B03, B04, B08, B11, B12). SWIR bands are critical — they carry the burn signal that visible RGB misses.
 - **Model:** U-Net with ResNet-34 encoder (ImageNet-pretrained), ~24M parameters, via [`segmentation-models-pytorch`](https://github.com/qubvel/segmentation_models.pytorch).
 - **Loss:** Combined BCE + Dice (50/50). BCE keeps gradients flowing per-pixel; Dice handles the 9.8:1 class imbalance.
@@ -35,6 +35,22 @@ Given a Sentinel-2 post-fire image, the model predicts which pixels show burned 
 - **Splits:** **Geographic** patches are grouped by fire UUID so no single fire appears in more than one split. Prevents spatial autocorrelation leakage that random patch splits silently introduce.
 - **Hardware:** Single NVIDIA GTX 1050 Ti (4 GB VRAM), ~45 min for 30 epochs.
 
+## Tech stack
+
+- PyTorch 2.6 (CUDA 12.4) + segmentation-models-pytorch (U-Net, ResNet-34 encoder)
+- h5py + hdf5plugin for CaBuAr HDF5 ingestion; numpy `.npy` cache for fast training (36× speedup)
+- rasterio, pyproj, shapely, geopandas for geospatial I/O and CRS handling
+- pandas for splits and per-sample analysis
+- albumentations for augmentation (geometric-only: flips + 90° rotations)
+- torchmetrics for IoU, F1, precision, recall
+- PyYAML for configuration (`configs/baseline.yaml`) with CLI overrides
+- Weights & Biases for experiment tracking and prediction visualization
+- matplotlib for results figures
+- Jupyter for data exploration and band statistics
+- Hugging Face Hub (`snapshot_download`) for dataset acquisition
+- uv for environment and dependency management (Python 3.11)
+- Git + GitHub for version control
+- 
 ## Reproduction
 
 ```bash
