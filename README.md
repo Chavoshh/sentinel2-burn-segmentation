@@ -50,7 +50,7 @@ Given a Sentinel-2 post-fire image, the model predicts which pixels show burned 
 - Hugging Face Hub (`snapshot_download`) for dataset acquisition
 - uv for environment and dependency management (Python 3.11)
 - Git + GitHub for version control
-- 
+
 ## Reproduction
 
 ```bash
